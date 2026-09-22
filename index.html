@@ -4,125 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Punjab Smart School | Daun Majra, Kharar</title>
+    <!-- Google Fonts for Modern Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #0284c7;
-            --secondary-color: #f59e0b;
-            --dark-color: #1e293b;
-            --light-color: #f8fafc;
+            --primary-color: #1e3a8a;
+            --accent-color: #f59e0b;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --white: #ffffff;
         }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         body {
-            background-color: var(--light-color);
-            color: var(--dark-color);
-            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
         }
         header {
-            background: linear-gradient(135deg, #0284c7, #0369a1);
-            color: white;
-            padding: 2.5rem 1rem;
+            background: linear-gradient(135deg, #1e3a8a, #0284c7);
+            color: var(--white);
+            padding: 3rem 1rem;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         header img {
-            width: 110px;
-            height: 110px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            border: 3px solid white;
-            background: white;
-            margin-bottom: 12px;
+            border: 4px solid var(--white);
+            background: var(--white);
+            margin-bottom: 15px;
             object-fit: contain;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         header h1 {
-            font-size: 2.3rem;
-            margin-bottom: 5px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
         }
         header p {
             font-size: 1.1rem;
-            opacity: 0.9;
+            opacity: 0.95;
+            font-weight: 300;
         }
         nav {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 0.9rem;
+            background-color: #0f172a;
+            color: var(--white);
+            padding: 1rem;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
         }
         nav a {
-            color: white;
+            color: var(--white);
             text-decoration: none;
             margin: 0 15px;
-            font-weight: 600;
-            transition: color 0.3s;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
         nav a:hover {
-            color: var(--secondary-color);
+            color: var(--accent-color);
         }
         .container {
             max-width: 1100px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
         }
         .section {
-            background: white;
-            padding: 2rem;
+            background: var(--white);
+            padding: 2.5rem;
             margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: translateY(-2px);
         }
         .section h2 {
             color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.7rem;
-            border-bottom: 2px solid #e2e8f0;
+            margin-bottom: 1.2rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            border-bottom: 3px solid var(--accent-color);
             padding-bottom: 0.5rem;
+            display: inline-block;
         }
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
+            gap: 1.8rem;
+            margin-top: 1.5rem;
         }
         .card {
             background: #f1f5f9;
-            padding: 1.5rem;
-            border-radius: 6px;
-            border-left: 4px solid var(--secondary-color);
+            padding: 1.8rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
         .card h3 {
-            margin-bottom: 0.5rem;
-            color: var(--dark-color);
-            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        /* Gallery Grid styling */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            background: var(--white);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
         }
         footer {
-            background-color: var(--dark-color);
-            color: white;
+            background-color: #0f172a;
+            color: var(--white);
             text-align: center;
-            padding: 1.5rem;
-            margin-top: 2rem;
+            padding: 2rem;
+            margin-top: 3rem;
+            font-weight: 300;
         }
         .social-btn {
             display: inline-block;
-            background-color: #1877f2;
-            color: white;
-            padding: 0.7rem 1.4rem;
-            border-radius: 4px;
+            background-color: #2563eb;
+            color: var(--white);
+            padding: 0.8rem 1.6rem;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: bold;
-            margin-top: 1rem;
+            font-weight: 600;
+            margin-top: 1.2rem;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
         }
         .social-btn:hover {
-            background-color: #145dbf;
+            background-color: #1d4ed8;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <!-- Logo Image -->
         <img src="1000096364.png" alt="Punjab Smart School Logo">
         <h1>Punjab Smart School</h1>
         <p>VPO Daun Majra, Tehsil Kharar, Distt. S.A.S. Nagar (Mohali), Punjab</p>
@@ -131,44 +177,67 @@
     <nav>
         <a href="#about">About Us / ਸਾਡੇ ਬਾਰੇ</a>
         <a href="#objectives">Objectives / ਮੁੱਖ ਮਕਸਦ</a>
+        <a href="#gallery">Gallery / ਫੋਟੋਆਂ</a>
         <a href="#contact">Contact / ਸੰਪਰਕ</a>
     </nav>
 
     <div class="container">
         
-        <!-- About Section -->
         <div id="about" class="section">
             <h2>About Us / ਸਾਡੇ ਬਾਰੇ</h2>
-            <p><strong>English:</strong> Punjab Smart School is a registered public charitable trust established on July 19, 2019. Our main goal is to work for the welfare of underprivileged sections, children's education, and community health facilities.</p>
-            <p style="margin-top: 10px;"><strong>ਪੰਜਾਬੀ:</strong> ਪੰਜਾਬ ਸਮਾਰਟ ਸਕੂਲ (Punjab Smart School) ਇੱਕ ਰਜਿਸਟਰਡ ਪਬਲਿਕ ਚੈਰਿਟੀਏਬਲ ਟਰੱਸਟ ਹੈ, ਜਿਸਦੀ ਸਥਾਪਨਾ 19 ਜੁਲਾਈ 2019 ਨੂੰ ਕੀਤੀ ਗਈ ਸੀ। ਸਾਡਾ ਮੁੱਖ ਟੀਚਾ ਸਮਾਜ ਦੇ ਪਛੜੇ ਵਰਗਾਂ, ਬੱਚਿਆਂ ਦੀ ਸਿੱਖਿਆ ਅਤੇ ਸਿਹਤ ਸਹੂਲਤਾਂ ਲਈ ਕੰਮ ਕਰਨਾ ਹੈ।</p>
+            <p><strong>English:</strong> Punjab Smart School is a registered public charitable trust established on July 19, 2019[cite: 1]. Our main goal is to work for the welfare of underprivileged sections, children's education, and community health facilities.</p>
+            <p style="margin-top: 15px;"><strong>ਪੰਜਾਬੀ:</strong> ਪੰਜਾਬ ਸਮਾਰਟ ਸਕੂਲ (Punjab Smart School) ਇੱਕ ਰਜਿਸਟਰਡ ਪਬਲਿਕ ਚੈਰਿਟੀਏਬਲ ਟਰੱਸਟ ਹੈ[cite: 1], ਜਿਸਦੀ ਸਥਾਪਨਾ 19 ਜੁਲਾਈ 2019 ਨੂੰ ਕੀਤੀ ਗਈ ਸੀ[cite: 1]। ਸਾਡਾ ਮੁੱਖ ਟੀਚਾ ਸਮਾਜ ਦੇ ਪਛੜੇ ਵਰਗਾਂ, ਬੱਚਿਆਂ ਦੀ ਸਿੱਖਿਆ ਅਤੇ ਸਿਹਤ ਸਹੂਲਤਾਂ ਲਈ ਕੰਮ ਕਰਨਾ ਹੈ।</p>
         </div>
 
-        <!-- Objectives Section -->
         <div id="objectives" class="section">
             <h2>Our Objectives / ਸਾਡੇ ਮੁੱਖ ਟੀਚੇ</h2>
             <div class="grid">
                 <div class="card">
                     <h3>📚 Education / ਸਿੱਖਿਆ</h3>
-                    <p><strong>English:</strong> Upgrading education standards in government schools by providing audio-visual aids (like projectors), digital study material, and scholarships for needy students.</p>
-                    <p style="margin-top: 8px; font-size: 0.95rem;"><strong>ਪੰਜਾਬੀ:</strong> ਸਰਕਾਰੀ ਸਕੂਲਾਂ ਵਿੱਚ ਆਡੀਓ-ਵਿਜ਼ੁਅਲ ਸਾਧਨਾਂ (ਜਿਵੇਂ ਪ੍ਰੋਜੈਕਟਰ), ਡਿਜੀਟਲ ਸਟੱਡੀ ਮਟੀਰੀਅਲ ਅਤੇ ਵਜ਼ੀਫ਼ਿਆਂ ਰਾਹੀਂ ਸਿੱਖਿਆ ਦਾ ਪੱਧਰ ਉੱਚਾ ਚੁੱਕਣਾ।</p>
+                    <p><strong>English:</strong> Upgrading education standards in government schools by providing audio-visual aids (like projectors), digital study material, and scholarships for needy students[cite: 1].</p>
+                    <p style="margin-top: 10px; font-size: 0.95rem;"><strong>ਪੰਜਾਬੀ:</strong> ਸਰਕਾਰੀ ਸਕੂਲਾਂ ਵਿੱਚ ਆਡੀਓ-ਵਿਜ਼ੁਅਲ ਸਾਧਨਾਂ (ਜਿਵੇਂ ਪ੍ਰੋਜੈਕਟਰ), ਡਿਜੀਟਲ ਸਟੱਡੀ ਮਟੀਰੀਅਲ ਅਤੇ ਵਜ਼ੀਫ਼ਿਆਂ ਰਾਹੀਂ ਸਿੱਖਿਆ ਦਾ ਪੱਧਰ ਉੱਚਾ ਚੁੱਕਣਾ[cite: 1].</p>
                 </div>
                 <div class="card">
                     <h3>🏥 Medical Services / ਮੈਡੀਕਲ ਸੇਵਾਵਾਂ</h3>
-                    <p><strong>English:</strong> Organizing medical camps, eye check-up camps, cancer awareness camps, and providing free healthcare assistance to the needy.</p>
-                    <p style="margin-top: 8px; font-size: 0.95rem;"><strong>ਪੰਜਾਬੀ:</strong> ਮੈਡੀਕਲ ਕੈਂਪ, ਅੱਖਾਂ ਦੇ ਚੈਕਅੱਪ, ਕੈਂਸਰ ਜਾਗਰੂਕਤਾ ਕੈਂਪ ਲਗਾਉਣਾ ਅਤੇ ਲੋੜਵੰਦਾਂ ਨੂੰ ਮੁਫ਼ਤ ਸਿਹਤ ਸੇਵਾਵਾਂ ਦੇਣਾ।</p>
+                    <p><strong>English:</strong> Organizing medical camps, eye check-up camps, cancer awareness camps, and providing free healthcare assistance to the needy[cite: 1].</p>
+                    <p style="margin-top: 10px; font-size: 0.95rem;"><strong>ਪੰਜਾਬੀ:</strong> ਮੈਡੀਕਲ ਕੈਂਪ, ਅੱਖਾਂ ਦੇ ਚੈਕਅੱਪ, ਕੈਂਸਰ ਜਾਗਰੂਕਤਾ ਕੈਂਪ ਲਗਾਉਣਾ ਅਤੇ ਲੋੜਵੰਦਾਂ ਨੂੰ ਮੁਫ਼ਤ ਸਿਹਤ ਸੇਵਾਵਾਂ ਦੇਣਾ[cite: 1].</p>
                 </div>
                 <div class="card">
                     <h3>🤝 Relief to Poor / ਗਰੀਬਾਂ ਦੀ ਸਹਾਇਤਾ</h3>
-                    <p><strong>English:</strong> Distributing books, notebooks, clothes, uniforms, and meals to poor and indigent individuals and students.</p>
-                    <p style="margin-top: 8px; font-size: 0.95rem;"><strong>ਪੰਜਾਬੀ:</strong> ਗਰੀਬ ਅਤੇ ਲੋੜਵੰਦ ਵਿਦਿਆਰਥੀਆਂ ਤੇ ਲੋਕਾਂ ਵਿੱਚ ਕਿਤਾਬਾਂ, ਕਾਪੀਆਂ, ਕੱਪੜੇ, ਯੂਨੀਫਾਰਮ ਅਤੇ ਭੋਜਨ ਵੰਡਣਾ।</p>
+                    <p><strong>English:</strong> Distributing books, notebooks, clothes, uniforms, and meals to poor and indigent individuals and students[cite: 1].</p>
+                    <p style="margin-top: 10px; font-size: 0.95rem;"><strong>ਪੰਜਾਬੀ:</strong> ਗਰੀਬ ਅਤੇ ਲੋੜਵੰਦ ਵਿਦਿਆਰਥੀਆਂ ਤੇ ਲੋਕਾਂ ਵਿੱਚ ਕਿਤਾਬਾਂ, ਕਾਪੀਆਂ, ਕੱਪੜੇ, ਯੂਨੀਫਾਰਮ ਅਤੇ ਭੋਜਨ ਵੰਡਣਾ[cite: 1].</p>
                 </div>
             </div>
         </div>
 
-        <!-- Contact Section -->
+        <div id="gallery" class="section">
+            <h2>Our Camps & Activities / ਸਾਡੇ ਕੈਂਪ ਅਤੇ ਗਤੀਵਿਧੀਆਂ</h2>
+            <p>Here are some glimpses of our welfare camps, events, and community services:</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2026-09-22 at 9.50.36 AM.jpeg" alt="Camp Activity 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2026-09-22 at 9.51.55 AM.jpeg" alt="Camp Activity 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2026-09-22 at 9.54.25 AM.jpeg" alt="Camp Activity 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2026-09-22 at 9.55.05 AM.jpeg" alt="Camp Activity 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2026-09-22 at 9.55.47 AM.jpeg" alt="Camp Activity 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2026-09-22 at 9.56.20 AM.jpeg" alt="Camp Activity 6">
+                </div>
+            </div>
+        </div>
+
         <div id="contact" class="section">
             <h2>Contact Us / ਸੰਪਰਕ ਕਰੋ</h2>
-            <p><strong>Address / ਪਤਾ:</strong> VPO Daun Majra, Tehsil Kharar, Distt. S.A.S. Nagar (Mohali), Punjab - 140301</p>
+            <p><strong>Address / ਪਤਾ:</strong> VPO Daun Majra, Tehsil Kharar, Distt. S.A.S. Nagar (Mohali), Punjab - 140301[cite: 1]</p>
             <p style="margin-top: 10px;">Visit our Facebook page for updates and activities / ਸਾਡੇ ਕੰਮਾਂ ਨੂੰ ਵੇਖਣ ਲਈ ਫੇਸਬੁੱਕ ਪੇਜ 'ਤੇ ਜਾਓ:</p>
             <a href="https://www.facebook.com/share/19WunNtjBN/" target="_blank" class="social-btn">View Facebook Page / ਫੇਸਬੁੱਕ ਪੇਜ ਵੇਖੋ</a>
         </div>
@@ -176,7 +245,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Punjab Smart School (Daun Majra, Kharar). All Rights Reserved.</p>
+        <p>&copy; 2026 Punjab Smart School (Daun Majra, Kharar). All Rights Reserved[cite: 1].</p>
     </footer>
 
 </body>
